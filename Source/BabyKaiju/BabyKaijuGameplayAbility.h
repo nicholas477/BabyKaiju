@@ -25,7 +25,7 @@ public:
 
 	/** What trigger event will activate this ability */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
-		TSet<ETriggerEvent> InputActionTriggerEvents = { ETriggerEvent::Triggered };
+		TSet<ETriggerEvent> InputActionTriggerEvents = { ETriggerEvent::Started };
 
 	UFUNCTION(BlueprintNativeEvent, Category = "Input")
 		void OnInputActionTriggered(const struct FInputActionValue& Value, ETriggerEvent TriggerEvent, FGameplayAbilityActorInfo ActorInfo) const;

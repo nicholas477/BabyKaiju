@@ -7,7 +7,7 @@
 
 void UBabyKaijuGameplayAbility::OnInputActionTriggered_Implementation(const struct FInputActionValue& Value, ETriggerEvent TriggerEvent, FGameplayAbilityActorInfo ActorInfo) const
 {
-	if (TriggerEvent == ETriggerEvent::Completed)
+	if (TriggerEvent == ETriggerEvent::Started)
 	{
 		ActorInfo.AbilitySystemComponent->TryActivateAbilityByClass(GetClass());
 	}

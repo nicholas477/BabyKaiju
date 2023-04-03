@@ -32,6 +32,8 @@ public:
 	 */
 	virtual void InitAbilityActorInfo(AActor* InOwnerActor, AActor* InAvatarActor) override;
 
+	void BindInputs();
+
 protected:
 	void AddStartupAbilities();
 	bool bHasAddedStartupAbilities = false;

@@ -89,6 +89,10 @@ void ABabyKaijuCharacter::SetupPlayerInputComponent(class UInputComponent* Playe
 		//Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ABabyKaijuCharacter::Look);
 
+		if (AbilitySystemComponent)
+		{
+			AbilitySystemComponent->BindInputs();
+		}
 	}
 
 }

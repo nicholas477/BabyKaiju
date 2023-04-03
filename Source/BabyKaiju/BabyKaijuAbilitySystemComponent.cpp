@@ -59,7 +59,7 @@ void UBabyKaijuAbilitySystemComponent::InitAbilityActorInfo(AActor* InOwnerActor
 	}
 }
 
-void UBabyKaijuAbilitySystemComponent::AddStartupAbilities()
+void UBabyKaijuAbilitySystemComponent::BindInputs()
 {
 	for (const TSubclassOf<UGameplayAbility>& StartupAbility : StartupAbilities)
 	{
@@ -71,7 +71,10 @@ void UBabyKaijuAbilitySystemComponent::AddStartupAbilities()
 			}
 		}
 	}
+}
 
+void UBabyKaijuAbilitySystemComponent::AddStartupAbilities()
+{
 	if (!bHasAddedStartupAbilities)
 	{
 		if (IsOwnerActorAuthoritative())
@@ -88,6 +91,8 @@ void UBabyKaijuAbilitySystemComponent::AddStartupAbilities()
 
 		bHasAddedStartupAbilities = true;
 	}
+
+	BindInputs();
 
 	if (!bHasAddedStartupEffects && GetAttributeSet(UAttributeSet::StaticClass()))
 	{
