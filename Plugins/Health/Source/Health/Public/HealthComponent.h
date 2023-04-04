@@ -22,7 +22,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMaxHealthChange, UHealthComponent
 
 class UHealthAttributeSet;
 
-UCLASS( ClassGroup=(Custom), Blueprintable, BlueprintType, meta=(BlueprintSpawnableComponent) )
+UCLASS( ClassGroup=(Health), Blueprintable, BlueprintType, meta=(BlueprintSpawnableComponent) )
 class HEALTH_API UHealthComponent : public UActorComponent, public IAbilitySystemInterface
 {
 	GENERATED_BODY()
